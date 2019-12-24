@@ -4,7 +4,9 @@ package guesthouse;
 import javax.swing.JFrame;
 import myFrame.frmBooking;
 import myFrame.frmCheckIn;
+import myFrame.frmCheckOut;
 import myFrame.frmSetupUser;
+import myFrame.frmViewRoom;
 
 public class MainForm extends javax.swing.JFrame {
 
@@ -82,11 +84,21 @@ public class MainForm extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vichea\\Documents\\NetBeansProjects\\GuestHouse\\icons\\ViewRoom_32.png")); // NOI18N
         jLabel4.setText("View Room");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vichea\\Documents\\NetBeansProjects\\GuestHouse\\icons\\CheckOut_32.png")); // NOI18N
         jLabel5.setText("Check Out");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -277,6 +289,16 @@ public class MainForm extends javax.swing.JFrame {
         frmBooking book = new frmBooking();
         book.show();
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        frmCheckOut ckOut = new  frmCheckOut();
+        ckOut.show();
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        frmViewRoom vRoom = new frmViewRoom();
+        vRoom.show();
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
