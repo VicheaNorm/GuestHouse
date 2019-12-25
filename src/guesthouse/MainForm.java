@@ -176,7 +176,7 @@ public class MainForm extends javax.swing.JFrame {
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(desktopLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(661, Short.MAX_VALUE))
+                .addContainerGap(622, Short.MAX_VALUE))
         );
 
         jMenuBar1.setMargin(new java.awt.Insets(0, 10, 0, 0));
