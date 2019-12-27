@@ -1,10 +1,14 @@
 
 package guesthouse;
 
+import java.awt.Component;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import myFrame.frmAddService;
 import myFrame.frmBooking;
 import myFrame.frmCheckIn;
 import myFrame.frmCheckOut;
+import myFrame.frmSetRoomPrice;
 import myFrame.frmSetupUser;
 import myFrame.frmViewRoom;
 
@@ -26,29 +30,29 @@ public class MainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktop = new javax.swing.JDesktopPane();
         jPanel2 = new javax.swing.JPanel();
         jCheckIn = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        btnAddService = new javax.swing.JLabel();
+        btnExit = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jFile = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jTransition = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        TBooking = new javax.swing.JMenu();
+        TCheckIn = new javax.swing.JMenuItem();
+        TBookiing = new javax.swing.JMenuItem();
+        TCheckOut = new javax.swing.JMenuItem();
         jSearch = new javax.swing.JMenu();
         jUtility = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        USetRoomPrice = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSecurity = new javax.swing.JMenu();
         jStock = new javax.swing.JMenu();
@@ -110,15 +114,25 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vichea\\Documents\\NetBeansProjects\\GuestHouse\\icons\\AddService_32.png")); // NOI18N
-        jLabel6.setText("Add Service");
+        btnAddService.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        btnAddService.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddService.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vichea\\Documents\\NetBeansProjects\\GuestHouse\\icons\\AddService_32.png")); // NOI18N
+        btnAddService.setText("Add Service");
+        btnAddService.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddServiceMouseClicked(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vichea\\Documents\\NetBeansProjects\\GuestHouse\\icons\\Exit_32.png")); // NOI18N
-        jLabel9.setText("Exit");
+        btnExit.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Vichea\\Documents\\NetBeansProjects\\GuestHouse\\icons\\Exit_32.png")); // NOI18N
+        btnExit.setText("Exit");
+        btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExitMouseClicked(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,12 +155,12 @@ public class MainForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addComponent(btnAddService)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addComponent(btnExit)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,27 +170,25 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(jCheckIn)
                     .addComponent(jLabel3)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel6)
+                    .addComponent(btnAddService)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel9))
+                    .addComponent(btnExit))
                 .addContainerGap())
         );
 
-        desktop.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(970, 457));
 
-        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
-        desktop.setLayout(desktopLayout);
-        desktopLayout.setHorizontalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        desktopLayout.setVerticalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(desktopLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(622, Short.MAX_VALUE))
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 468, Short.MAX_VALUE)
         );
 
         jMenuBar1.setMargin(new java.awt.Insets(0, 10, 0, 0));
@@ -184,36 +196,59 @@ public class MainForm extends javax.swing.JFrame {
         jFile.setText("File");
         jFile.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setText("Save");
         jMenuItem9.setMargin(new java.awt.Insets(5, 0, 5, 0));
         jFile.add(jMenuItem9);
 
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem7.setText("Print");
         jMenuItem7.setMargin(new java.awt.Insets(5, 0, 5, 0));
         jFile.add(jMenuItem7);
 
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem8.setText("Exit");
         jMenuItem8.setMargin(new java.awt.Insets(5, 0, 5, 0));
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jFile.add(jMenuItem8);
 
         jMenuBar1.add(jFile);
 
-        jTransition.setText("Transition");
-        jTransition.setMargin(new java.awt.Insets(0, 0, 0, 20));
+        TBooking.setText("Transition");
+        TBooking.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
-        jMenuItem1.setText("Check In");
-        jMenuItem1.setMargin(new java.awt.Insets(5, 0, 5, 0));
-        jTransition.add(jMenuItem1);
+        TCheckIn.setText("Check In");
+        TCheckIn.setMargin(new java.awt.Insets(5, 0, 5, 0));
+        TCheckIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCheckInActionPerformed(evt);
+            }
+        });
+        TBooking.add(TCheckIn);
 
-        jMenuItem5.setText("Booking");
-        jMenuItem5.setMargin(new java.awt.Insets(5, 0, 5, 0));
-        jTransition.add(jMenuItem5);
+        TBookiing.setText("Booking");
+        TBookiing.setMargin(new java.awt.Insets(5, 0, 5, 0));
+        TBookiing.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBookiingActionPerformed(evt);
+            }
+        });
+        TBooking.add(TBookiing);
 
-        jMenuItem6.setText("Check Out");
-        jMenuItem6.setMargin(new java.awt.Insets(5, 0, 5, 0));
-        jTransition.add(jMenuItem6);
+        TCheckOut.setText("Check Out");
+        TCheckOut.setMargin(new java.awt.Insets(5, 0, 5, 0));
+        TCheckOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCheckOutActionPerformed(evt);
+            }
+        });
+        TBooking.add(TCheckOut);
 
-        jMenuBar1.add(jTransition);
+        jMenuBar1.add(TBooking);
 
         jSearch.setText("Search");
         jSearch.setMargin(new java.awt.Insets(0, 0, 0, 20));
@@ -225,8 +260,13 @@ public class MainForm extends javax.swing.JFrame {
         jMenuItem2.setText("Customer Information");
         jUtility.add(jMenuItem2);
 
-        jMenuItem3.setText("Set Room Price");
-        jUtility.add(jMenuItem3);
+        USetRoomPrice.setText("Set Room Price");
+        USetRoomPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                USetRoomPriceActionPerformed(evt);
+            }
+        });
+        jUtility.add(USetRoomPrice);
 
         jMenuItem4.setText("Room information");
         jUtility.add(jMenuItem4);
@@ -259,36 +299,59 @@ public class MainForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktop)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCheckInMouseClicked
-        // TODO add your handling code here:
-        frmCheckIn checkIn = new frmCheckIn();
-        
-        checkIn.show();
-    }//GEN-LAST:event_jCheckInMouseClicked
+    private void TBookiingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBookiingActionPerformed
+        frmBooking bkg = new frmBooking();
+        bkg.show();
+    }//GEN-LAST:event_TBookiingActionPerformed
+
+    private void TCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCheckInActionPerformed
+        frmCheckIn cki = new frmCheckIn();
+        cki.show();
+    }//GEN-LAST:event_TCheckInActionPerformed
+
+    private void TCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCheckOutActionPerformed
+        frmCheckOut cko = new frmCheckOut();
+        cko.show();
+    }//GEN-LAST:event_TCheckOutActionPerformed
+
+    private void USetRoomPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_USetRoomPriceActionPerformed
+        frmSetRoomPrice srp = new frmSetRoomPrice();
+        srp.show();
+    }//GEN-LAST:event_USetRoomPriceActionPerformed
+
+    private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
+        Component Frame = new JFrame("Exit");
+
+        if (JOptionPane.showConfirmDialog( Frame,"confirm if you Want to Exit","Name of the Application or Title",
+            JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
+         System.exit(0);
+    }//GEN-LAST:event_btnExitMouseClicked
+
+    private void btnAddServiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddServiceMouseClicked
+        frmAddService addS = new frmAddService();
+        addS.show();
+    }//GEN-LAST:event_btnAddServiceMouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         frmSetupUser set = new frmSetupUser();
         set.show();
-        
-    }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        frmBooking book = new frmBooking();
-        book.show();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         frmCheckOut ckOut = new  frmCheckOut();
@@ -299,6 +362,26 @@ public class MainForm extends javax.swing.JFrame {
         frmViewRoom vRoom = new frmViewRoom();
         vRoom.show();
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        frmBooking book = new frmBooking();
+        book.show();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jCheckInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCheckInMouseClicked
+        // TODO add your handling code here:
+        frmCheckIn checkIn = new frmCheckIn();
+
+        checkIn.show();
+    }//GEN-LAST:event_jCheckInMouseClicked
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        Component Frame = new JFrame("Exit");
+
+        if (JOptionPane.showConfirmDialog( Frame,"confirm if you Want to Exit","Name of the Application or Title",
+            JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
+         System.exit(0);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,25 +420,26 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane desktop;
+    private javax.swing.JMenuItem TBookiing;
+    private javax.swing.JMenu TBooking;
+    private javax.swing.JMenuItem TCheckIn;
+    private javax.swing.JMenuItem TCheckOut;
+    private javax.swing.JMenuItem USetRoomPrice;
+    private javax.swing.JLabel btnAddService;
+    private javax.swing.JLabel btnExit;
     private javax.swing.JMenu jAbout;
     private javax.swing.JLabel jCheckIn;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jFile;
     private javax.swing.JMenu jHelp;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
@@ -364,7 +448,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenu jSearch;
     private javax.swing.JMenu jSecurity;
     private javax.swing.JMenu jStock;
-    private javax.swing.JMenu jTransition;
     private javax.swing.JMenu jUtility;
     // End of variables declaration//GEN-END:variables
 }
